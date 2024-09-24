@@ -1,4 +1,4 @@
-from dash import Dash, dcc
+from dash import Dash, dcc, html
 import dash_design_kit as ddk
 import plotly.express as px
 import datetime
@@ -15,14 +15,11 @@ server = app.server  # expose server variable for Procfile
 
 df = px.data.stocks()
 
-app.layout = ddk.App([
+app.layout = html.Div(children=[
 
-    ddk.Header([
-        ddk.Logo(src=app.get_asset_url('logo.svg')),
-        ddk.Title('The APP 22222 deployed time is: ' + str(utc_time.astimezone(est))),
-    ]),
+    html.Div('The APP 2 deployed time is: ' + str(utc_time.astimezone(est))),
 
-    ddk.Card(children=ddk.Graph(figure=px.line(df, x="date", y=["GOOG", "AAPL"], title='Stock Prices')))
+    html.Div(children=dcc.Graph(figure=px.line(df, x="date", y=["GOOG", "AAPL"], title='Stock Prices')))
 
 ])
 
