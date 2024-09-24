@@ -1,5 +1,3 @@
---extra-index-url https://cs-22.plotly.host/packages
-dash-design-kit==1.9.0
 dash==2.14.1
 gunicorn==20.0.4
 pandas>=1.1.5
