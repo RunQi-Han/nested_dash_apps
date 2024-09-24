@@ -28,9 +28,9 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
-      - uses: plotly/de-deploy@v2
+      - uses: plotly/de-deploy@v4
         with:
-          # de_client_version: '1.8.2'
+          de_client_version: '1.8.2'
           DE_HOST: ${{ secrets.DE_HOST }}
           DE_USERNAME: ${{ secrets.DE_USERNAME }}
           DE_PASSWORD: ${{ secrets.DE_PASSWORD }}
